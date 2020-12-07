@@ -5,27 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo app</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
     <div id="wrapper">
         <header id="header">
             <h1 id="logo">TODO</h1>
-            <div id="switcher-theme">swither</div>
+            <div id="switcher-theme"></div>
         </header>
-        <div class="bars">
+        <div id="top-bar">
             <form id="add-todo">
                 <input type="text" autocomplete="off" placeholder="Create a new todo..">
             </form>
         </div>
         <div id="main-container">
             <ul id="todo-list">
-                <li class="todos">todo 1</li>
-                <li class="todos">todo 2</li>
-                <li class="todos">todo 3</li>
+                <li class="todos">
+                    <div class="todo-checks"></div>
+                    <p class="todo-names">Complete online JavaScript course</p>
+                    <div class="todo-closes"></div>
+                </li>
             </ul>
             <div id="control-panel">
-                <p class="todos-counter">3 items left</p>
+                <p id="todos-counter">3 items left</p>
                 <ul id="filters-list">
                     <li class="filters">All</li>
                     <li class="filters">Active</li>
@@ -33,8 +38,9 @@
                 </ul>
                 <div id="clear-completed">Clear Completed</div>
             </div>
-            <p>Drag and drop to reorder list</p>
         </div>
+
+        <p id="reminder">Drag and drop to reorder list</p>
     </div>
     <script src="./js/index.js"></script>
 </body>

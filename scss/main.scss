@@ -1,0 +1,191 @@
+// COLORS
+// primary
+$brightBlue: #3a7bfd;
+$CheckBackground: linear-gradient(to right, #57ddff, #c058f3);
+// dark theme
+$VeryDarkBlue: #161722;
+$VeryDarkDesaturatedBlue: #25273c;
+$LightGrayishBlueDark: #cacde8;
+$DarkGrayishBlueDark: #777a92;
+$VeryDarkGrayishBlueDark: #4d5066;
+$VeryDarkGrayishBlueDark2: #393a4c;
+// light theme
+$VeryLightGray: #fafafa;
+$VeryLightGrayishBlue: #e4e5f1;
+$LightGrayishBlueLight: #d2d3db;
+$DarkGrayishBlueLight: #9394a5;
+$VeryDarkGrayishBlueLight: #484b6a;
+
+// CSS Reset
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+// Fonts 
+
+body {
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h1 {
+    font-size: 1.7em;
+}
+
+// Grid and Styles
+
+body {
+    --bg-img: url(../assets/bg-mobile-dark.jpg) top no-repeat;
+    --bg-main: #161722;
+    --bg-second: #25273c;
+    --color: #cacde8;
+    --lines: #393a4c;
+    --swicher: url(../assets/icon-sun.svg) center no-repeat;
+
+    background: var(--bg-img);
+    background-size: 100%;
+    background-color: var(--bg-main);
+    color: var(--color);
+}
+
+#wrapper {
+    padding: 15px;
+    max-width: 550px;
+}
+
+header#header {
+    margin-top: 40px;
+    display: flex;
+    color: #fff;
+
+    & h1#logo{
+        letter-spacing: 0.4em;
+    }
+
+    & #switcher-theme {
+        margin-left: auto;
+        width: 35px;
+        background: var(--swicher);
+    }
+}
+
+#top-bar {
+    margin-top: 36px;
+    width: 100%;
+    height: 48px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    align-items: center;
+    background-color: var(--bg-second);
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border: 1px solid;
+        color: var(--lines);
+    }
+
+    & form#add-todo {
+        height: 100%;
+        grid-column: 2/8;
+
+        & input {
+            transform: translateY(2px);
+            height: 100%;
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            font-size: 16px;
+            font-family: 'Josefin Sans', sans-serif;
+            outline: none;
+            color: var(--color);
+        }
+    }
+}
+
+#main-container {
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: var(--bg-second);
+
+    & ul#todo-list {
+        
+        & li.todos {
+            height: 48px;
+            display: flex;
+            align-items: center;
+            border-bottom: solid 1px var(--lines);
+
+            & .todo-checks {
+                width: 25px;
+                height: 25px;
+                margin-left: 15px;
+                margin-right: 7px;
+                border-radius: 50%;
+                border: 1px solid;
+                color: var(--lines);
+            }
+
+            & p.todo-names {
+                transform: translateY(1px);
+            }
+
+            & .todo-closes {
+                width: 30px;
+                height: 30px;
+                margin-left: auto;
+                margin-right: 5px;
+                background: url(../assets/icon-cross.svg) no-repeat center;
+            }
+        }
+    }
+
+    & #control-panel {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        height: 48px;
+
+        & #todos-counter {
+            margin-left: 10px;
+        }
+
+        & ul#filters-list {
+            position: absolute;
+            top: 68px;
+            width: 100%;
+            height: 48px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 5px;
+            background-color: var(--bg-second);
+        }
+
+        & #clear-completed {
+            margin-right: 10px;
+        }
+    }
+}
+
+p#reminder {
+    margin-top: 90px;
+    text-align: center;
+}
+
