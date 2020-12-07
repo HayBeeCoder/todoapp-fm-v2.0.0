@@ -8,7 +8,35 @@
 </head>
 
 <body>
-
+    <div id="wrapper">
+        <header id="header">
+            <h1 id="logo">TODO</h1>
+            <div id="switcher-theme">swither</div>
+        </header>
+        <div class="bars">
+            <form id="add-todo">
+                <input type="text" autocomplete="off" placeholder="Create a new todo..">
+            </form>
+        </div>
+        <div id="main-container">
+            <ul id="todo-list">
+                <li class="todos">todo 1</li>
+                <li class="todos">todo 2</li>
+                <li class="todos">todo 3</li>
+            </ul>
+            <div id="control-panel">
+                <p class="todos-counter">3 items left</p>
+                <ul id="filters-list">
+                    <li class="filters">All</li>
+                    <li class="filters">Active</li>
+                    <li class="filters">Completed</li>
+                </ul>
+                <div id="clear-completed">Clear Completed</div>
+            </div>
+            <p>Drag and drop to reorder list</p>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
