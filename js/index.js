@@ -2,6 +2,7 @@ const addTodoForm = document.querySelector('#add-todo');
 const addTodoInput = document.querySelector('#add-todo input');
 const todoList = document.querySelector('#todo-list');
 const todoNames = document.querySelector('.todo-names');
+const clearCompletedBtn = document.querySelector('#clear-completed')
 
 addTodoInput.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
@@ -10,6 +11,7 @@ addTodoInput.addEventListener('keypress', function (e) {
     }
 });
 todoList.addEventListener('click', todoCheckClose);
+clearCompletedBtn.addEventListener('click', clearCompleted);
 
 
 function addTodo() {
@@ -33,6 +35,8 @@ function addTodo() {
     todoList.appendChild(todoLi);
     // clear the input field
     addTodoInput.value = '';
+
+    // todosCount();
 }
 
 function todoCheckClose(event) {
@@ -44,4 +48,29 @@ function todoCheckClose(event) {
         item.classList.add('crossline');
         item.previousElementSibling.classList.add('checked');
     }
+}
+
+// function todosCount() {
+//     const todos = document.querySelectorAll('.todos');
+//     const counter = document.querySelector('#todos-counter');
+//     let number = 0;
+//     const todosNumberCheck = () => {
+//         todos.forEach((todo) => {
+//             if (!todo.)
+//         })
+//     }
+//     counter.innerText = `${todos.length} items left`;
+// }
+// todosCount();
+
+function clearCompleted() {
+    const todos = document.querySelectorAll('#todo-list .todos')
+    todos.forEach((todo) => {
+        Array.from(todo.children).forEach((child) => {
+            if (child.classList.contains('crossline')) {
+                todo.remove();
+            }
+        })
+    })
+    todosCount();
 }
