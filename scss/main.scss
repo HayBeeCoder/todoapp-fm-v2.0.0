@@ -143,6 +143,7 @@ header#header {
     box-shadow: 0 15px 50px 1px rgba($color: $VeryLightGrayishBlue, $alpha: var(--opacity));
 
     & ul#todo-list {
+        font-weight: 300;
   
         & li.todos {
             height: 48px;
@@ -250,7 +251,6 @@ p#reminder {
 @media screen and (min-width: 768px){
     body {
         --bg-img: url(../assets/bg-desktop-dark.jpg) top no-repeat;
-        font-size: 18px;
 
         &.light-theme{
             --bg-img: url(../assets/bg-desktop-light.jpg) top no-repeat;
@@ -259,6 +259,29 @@ p#reminder {
 
     header#header {
         margin-top: 80px;
+    }
+
+    #main-container {
+        & #control-panel {
+            font-size: 14px;
+
+            ul#filters-list {
+                position: initial;
+                top: 0;
+                width: auto;
+                font-size: 14px;
+
+                & li:not(:last-of-type) {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    p#reminder {
+        margin-top: 70px;
+        text-align: center;
+        cursor: default;
     }
 }
 

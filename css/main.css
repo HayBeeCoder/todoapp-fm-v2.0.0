@@ -130,6 +130,10 @@ header#header #switcher-theme {
           box-shadow: 0 15px 50px 1px rgba(228, 229, 241, var(--opacity));
 }
 
+#main-container ul#todo-list {
+  font-weight: 300;
+}
+
 #main-container ul#todo-list li.todos {
   height: 48px;
   display: -webkit-box;
@@ -248,13 +252,29 @@ p#reminder {
 @media screen and (min-width: 768px) {
   body {
     --bg-img: url(../assets/bg-desktop-dark.jpg) top no-repeat;
-    font-size: 18px;
   }
   body.light-theme {
     --bg-img: url(../assets/bg-desktop-light.jpg) top no-repeat;
   }
   header#header {
     margin-top: 80px;
+  }
+  #main-container #control-panel {
+    font-size: 14px;
+  }
+  #main-container #control-panel ul#filters-list {
+    position: initial;
+    top: 0;
+    width: auto;
+    font-size: 14px;
+  }
+  #main-container #control-panel ul#filters-list li:not(:last-of-type) {
+    margin-right: 10px;
+  }
+  p#reminder {
+    margin-top: 70px;
+    text-align: center;
+    cursor: default;
   }
 }
 /*# sourceMappingURL=main.css.map */
