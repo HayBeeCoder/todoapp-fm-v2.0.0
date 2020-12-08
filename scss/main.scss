@@ -105,7 +105,7 @@ header#header {
         content: '';
         position: absolute;
         top: 50%;
-        left: 15px;
+        left: 10px;
         transform: translateY(-50%);
         width: 25px;
         height: 25px;
@@ -117,6 +117,7 @@ header#header {
     & form#add-todo {
         height: 100%;
         grid-column: 2/8;
+        margin-left: 4px;
 
         & input {
             transform: translateY(2px);
@@ -150,7 +151,7 @@ header#header {
             & .todo-checks {
                 width: 25px;
                 height: 25px;
-                margin-left: 15px;
+                margin-left: 10px;
                 margin-right: 7px;
                 border-radius: 50%;
                 border: 1px solid;
@@ -158,10 +159,7 @@ header#header {
             }
 
             & p.todo-names {
-                transform: translateY(1px);
-                line-height: 2em;
-                flex-grow: 1;
-                margin-right: 5px;
+                width: 75%;
             }
 
             & .todo-closes {

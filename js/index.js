@@ -99,7 +99,7 @@ function clearCompleted() {
 
 function allFilter() {
     // set color for active link
-    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = '--color')
+    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = 'var(--color)')
     document.querySelector('#all').style.color = '#3a7bfd';
     // set class for todo list
     todoList.classList = 'todoList all';
@@ -112,7 +112,7 @@ function allFilter() {
 
 function activeFilter(e) {
     // set color for active link
-    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = '--color')
+    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = 'var(--color)')
     document.querySelector('#active').style.color = '#3a7bfd';
     // set class for todo list
     todoList.classList = 'todoList active';
@@ -129,7 +129,7 @@ function activeFilter(e) {
 
 function completedFilter(e) {
     // set color for active link
-    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = '--color')
+    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = 'var(--color)')
     document.querySelector('#completed').style.color = '#3a7bfd';
     // set class for todo list
     todoList.classList = 'todoList completed';
