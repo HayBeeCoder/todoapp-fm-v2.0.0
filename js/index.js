@@ -45,8 +45,8 @@ function todoCheckClose(event) {
         const todo = item.parentElement;
         todo.remove();
     } else if (item.classList[0] === 'todo-names') {
-        item.classList.add('crossline');
-        item.previousElementSibling.classList.add('checked');
+        const todo = item.parentElement;
+        todo.classList.add('completed');
     }
 }
 

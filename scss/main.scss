@@ -142,8 +142,26 @@ header#header {
                 border-radius: 50%;
                 border: 1px solid;
                 color: var(--lines);
-                
-                &.checked {
+            }
+
+            & p.todo-names {
+                transform: translateY(1px);
+                line-height: 2em;
+                flex-grow: 1;
+                margin-right: 5px;
+            }
+
+            & .todo-closes {
+                width: 30px;
+                height: 30px;
+                margin-left: auto;
+                margin-right: 5px;
+                background: url(../assets/icon-cross.svg) no-repeat center;
+            }
+
+            &.completed {
+
+                & .todo-checks {
                     background: $CheckBackground;
                     border: none;
                     position: relative;
@@ -160,26 +178,15 @@ header#header {
                         background-repeat: no-repeat;
                         background-position: center;
                     }
+                    
                 }
-            }
 
-            & p.todo-names {
-                transform: translateY(1px);
-                line-height: 2em;
-                flex-grow: 1;
-                margin-right: 5px;
-                &.crossline {
+                & p.todo-names {
                     color: var(--color-closed);
                     text-decoration: line-through;
                 }
-            }
 
-            & .todo-closes {
-                width: 30px;
-                height: 30px;
-                margin-left: auto;
-                margin-right: 5px;
-                background: url(../assets/icon-cross.svg) no-repeat center;
+
             }
         }
     }
