@@ -26,10 +26,22 @@ body {
   --lines: #393a4c;
   --swicher: url(../assets/icon-sun.svg) center no-repeat;
   --color-closed: #9394a5;
+  --opacity: 0.0;
   background: var(--bg-img);
   background-size: 100%;
   background-color: var(--bg-main);
   color: var(--color);
+}
+
+body.light-theme {
+  --bg-img: url(../assets/bg-mobile-light.jpg) top no-repeat;
+  --bg-main: #fafafa;
+  --bg-second: #fff;
+  --color: #484b6a;
+  --lines: #e4e5f1;
+  --swicher: url(../assets/icon-moon.svg) center no-repeat;
+  --color-closed: #cacde8;
+  --opacity: 0.6;
 }
 
 #wrapper {
@@ -111,6 +123,8 @@ header#header #switcher-theme {
   margin-top: 20px;
   border-radius: 5px;
   background-color: var(--bg-second);
+  -webkit-box-shadow: 0 15px 50px 1px rgba(228, 229, 241, var(--opacity));
+          box-shadow: 0 15px 50px 1px rgba(228, 229, 241, var(--opacity));
 }
 
 #main-container ul#todo-list li.todos {
@@ -212,6 +226,8 @@ header#header #switcher-theme {
   border-radius: 5px;
   background-color: var(--bg-second);
   font-size: 17px;
+  -webkit-box-shadow: 0 15px 50px 1px rgba(228, 229, 241, var(--opacity));
+          box-shadow: 0 15px 50px 1px rgba(228, 229, 241, var(--opacity));
 }
 
 #main-container #control-panel #clear-completed {
@@ -219,7 +235,7 @@ header#header #switcher-theme {
 }
 
 p#reminder {
-  margin-top: 90px;
+  margin-top: 110px;
   text-align: center;
 }
 /*# sourceMappingURL=main.css.map */

@@ -49,11 +49,23 @@ body {
     --lines: #393a4c;
     --swicher: url(../assets/icon-sun.svg) center no-repeat;
     --color-closed: #9394a5;
+    --opacity: 0.0;
 
     background: var(--bg-img);
     background-size: 100%;
     background-color: var(--bg-main);
     color: var(--color);
+
+    &.light-theme {
+        --bg-img: url(../assets/bg-mobile-light.jpg) top no-repeat;
+        --bg-main: #fafafa;
+        --bg-second: #fff;
+        --color: #484b6a;
+        --lines: #e4e5f1;
+        --swicher: url(../assets/icon-moon.svg) center no-repeat;
+        --color-closed: #cacde8;
+        --opacity: 0.6;
+    }
 }
 
 #wrapper {
@@ -125,6 +137,7 @@ header#header {
     margin-top: 20px;
     border-radius: 5px;
     background-color: var(--bg-second);
+    box-shadow: 0 15px 50px 1px rgba($color: $VeryLightGrayishBlue, $alpha: var(--opacity));
 
     & ul#todo-list {
   
@@ -211,6 +224,7 @@ header#header {
             border-radius: 5px;
             background-color: var(--bg-second);
             font-size: 17px;
+            box-shadow: 0 15px 50px 1px rgba($color: $VeryLightGrayishBlue, $alpha: var(--opacity));
         }
 
         & #clear-completed {
@@ -220,7 +234,7 @@ header#header {
 }
 
 p#reminder {
-    margin-top: 90px;
+    margin-top: 110px;
     text-align: center;
 }
 

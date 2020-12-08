@@ -3,6 +3,7 @@ const addTodoInput = document.querySelector('#add-todo input');
 const todoList = document.querySelector('#todo-list');
 const todoNames = document.querySelector('.todo-names');
 const clearCompletedBtn = document.querySelector('#clear-completed');
+const themeBtn = document.querySelector('#switcher-theme')
 // filters buttons
 const allBtn = document.querySelector('#all');
 const activeBtn = document.querySelector('#active');
@@ -17,6 +18,9 @@ addTodoInput.addEventListener('keypress', function (e) {
 });
 todoList.addEventListener('click', todoCheckClose);
 clearCompletedBtn.addEventListener('click', clearCompleted);
+themeBtn.addEventListener('click', function () {
+    document.querySelector('body').classList.toggle('light-theme');
+});
 
 // Event listeners for filter buttons
 allBtn.addEventListener('click', allFilter)
@@ -95,7 +99,7 @@ function clearCompleted() {
 
 function allFilter() {
     // set color for active link
-    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = '#cacde8')
+    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = '--color')
     document.querySelector('#all').style.color = '#3a7bfd';
     // set class for todo list
     todoList.classList = 'todoList all';
@@ -108,7 +112,7 @@ function allFilter() {
 
 function activeFilter(e) {
     // set color for active link
-    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = '#cacde8')
+    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = '--color')
     document.querySelector('#active').style.color = '#3a7bfd';
     // set class for todo list
     todoList.classList = 'todoList active';
@@ -125,7 +129,7 @@ function activeFilter(e) {
 
 function completedFilter(e) {
     // set color for active link
-    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = '#cacde8')
+    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = '--color')
     document.querySelector('#completed').style.color = '#3a7bfd';
     // set class for todo list
     todoList.classList = 'todoList completed';
@@ -139,6 +143,7 @@ function completedFilter(e) {
         }
     })
 }
+
 
 // Drag and drop sortable functionality from liblary Sortable.js
 
