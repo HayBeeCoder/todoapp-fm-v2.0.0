@@ -66,11 +66,9 @@ function todoCheckClose(event) {
 function clearCompleted() {
     const todos = document.querySelectorAll('#todo-list .todos')
     todos.forEach((todo) => {
-        Array.from(todo.children).forEach((child) => {
-            if (child.classList.contains('crossline')) {
-                todo.remove();
-            }
-        })
+        if (todo.classList.contains('completed')) {
+            todo.remove();
+        }
     })
-    todosCount();
+    // todosCount();
 }
