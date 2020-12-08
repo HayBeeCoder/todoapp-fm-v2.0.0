@@ -36,7 +36,7 @@ function addTodo() {
     // clear the input field
     addTodoInput.value = '';
 
-    // todosCount();
+    todosCount();
 }
 
 function todoCheckClose(event) {
@@ -48,20 +48,21 @@ function todoCheckClose(event) {
         const todo = item.parentElement;
         todo.classList.add('completed');
     }
+    todosCount();
 }
 
-// function todosCount() {
-//     const todos = document.querySelectorAll('.todos');
-//     const counter = document.querySelector('#todos-counter');
-//     let number = 0;
-//     const todosNumberCheck = () => {
-//         todos.forEach((todo) => {
-//             if (!todo.)
-//         })
-//     }
-//     counter.innerText = `${todos.length} items left`;
-// }
-// todosCount();
+function todosCount() {
+    const todos = document.querySelectorAll('.todos');
+    const counter = document.querySelector('#todos-counter');
+    let number = 0;
+    todos.forEach((todo) => {
+        if (!todo.classList.contains('completed')) {
+            number++
+        }
+    })
+    counter.innerText = `${number} items left`;
+}
+todosCount();
 
 function clearCompleted() {
     const todos = document.querySelectorAll('#todo-list .todos')
@@ -70,5 +71,5 @@ function clearCompleted() {
             todo.remove();
         }
     })
-    // todosCount();
+    todosCount();
 }
