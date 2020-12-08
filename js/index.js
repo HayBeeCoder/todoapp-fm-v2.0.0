@@ -1,6 +1,7 @@
 const addTodoForm = document.querySelector('#add-todo');
 const addTodoInput = document.querySelector('#add-todo input');
-const todoList = document.querySelector('#todo-list')
+const todoList = document.querySelector('#todo-list');
+const todoNames = document.querySelector('.todo-names');
 
 addTodoInput.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
@@ -8,6 +9,8 @@ addTodoInput.addEventListener('keypress', function (e) {
         addTodo();
     }
 });
+todoList.addEventListener('click', todoCheckClose);
+
 
 function addTodo() {
     // create li
@@ -30,4 +33,15 @@ function addTodo() {
     todoList.appendChild(todoLi);
     // clear the input field
     addTodoInput.value = '';
+}
+
+function todoCheckClose(event) {
+    const item = event.target;
+    if (item.classList[0] === 'todo-closes') {
+        const todo = item.parentElement;
+        todo.remove();
+    } else if (item.classList[0] === 'todo-names') {
+        item.classList.add('crossline');
+        item.previousElementSibling.classList.add('checked');
+    }
 }
