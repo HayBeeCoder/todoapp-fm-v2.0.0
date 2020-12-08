@@ -34,6 +34,7 @@ body {
 #wrapper {
   padding: 15px;
   max-width: 550px;
+  margin: 0 auto;
 }
 
 header#header {
@@ -177,6 +178,7 @@ header#header #switcher-theme {
           align-items: center;
   border-radius: 5px;
   background-color: var(--bg-second);
+  font-size: 17px;
 }
 
 #main-container #control-panel #clear-completed {
