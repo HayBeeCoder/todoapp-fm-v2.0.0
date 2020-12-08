@@ -25,6 +25,7 @@ body {
   --color: #cacde8;
   --lines: #393a4c;
   --swicher: url(../assets/icon-sun.svg) center no-repeat;
+  --color-closed: #9394a5;
   background: var(--bg-img);
   background-size: 100%;
   background-color: var(--bg-main);
@@ -103,6 +104,7 @@ header#header #switcher-theme {
   font-family: 'Josefin Sans', sans-serif;
   outline: none;
   color: var(--color);
+  line-height: 100%;
 }
 
 #main-container {
@@ -132,9 +134,40 @@ header#header #switcher-theme {
   color: var(--lines);
 }
 
+#main-container ul#todo-list li.todos .todo-checks.checked {
+  background: -webkit-gradient(linear, left top, right top, from(#57ddff), to(#c058f3));
+  background: linear-gradient(to right, #57ddff, #c058f3);
+  border: none;
+  position: relative;
+}
+
+#main-container ul#todo-list li.todos .todo-checks.checked:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-image: url(../assets/icon-check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 #main-container ul#todo-list li.todos p.todo-names {
   -webkit-transform: translateY(1px);
           transform: translateY(1px);
+  line-height: 2em;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-right: 5px;
+}
+
+#main-container ul#todo-list li.todos p.todo-names.crossline {
+  color: var(--color-closed);
+  text-decoration: line-through;
 }
 
 #main-container ul#todo-list li.todos .todo-closes {

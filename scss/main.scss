@@ -48,6 +48,7 @@ body {
     --color: #cacde8;
     --lines: #393a4c;
     --swicher: url(../assets/icon-sun.svg) center no-repeat;
+    --color-closed: #9394a5;
 
     background: var(--bg-img);
     background-size: 100%;
@@ -115,6 +116,7 @@ header#header {
             font-family: 'Josefin Sans', sans-serif;
             outline: none;
             color: var(--color);
+            line-height: 100%;
         }
     }
 }
@@ -140,10 +142,36 @@ header#header {
                 border-radius: 50%;
                 border: 1px solid;
                 color: var(--lines);
+                
+                &.checked {
+                    background: $CheckBackground;
+                    border: none;
+                    position: relative;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 10px;
+                        height: 10px;
+                        background-image:url(../assets/icon-check.svg);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                }
             }
 
             & p.todo-names {
                 transform: translateY(1px);
+                line-height: 2em;
+                flex-grow: 1;
+                margin-right: 5px;
+                &.crossline {
+                    color: var(--color-closed);
+                    text-decoration: line-through;
+                }
             }
 
             & .todo-closes {
