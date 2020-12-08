@@ -60,12 +60,14 @@ header#header {
 
 header#header h1#logo {
   letter-spacing: 0.4em;
+  cursor: default;
 }
 
 header#header #switcher-theme {
   margin-left: auto;
   width: 35px;
   background: var(--swicher);
+  cursor: pointer;
 }
 
 #top-bar {
@@ -151,6 +153,7 @@ header#header #switcher-theme {
 
 #main-container ul#todo-list li.todos p.todo-names {
   width: 75%;
+  cursor: pointer;
 }
 
 #main-container ul#todo-list li.todos .todo-closes {
@@ -159,6 +162,7 @@ header#header #switcher-theme {
   margin-left: auto;
   margin-right: 5px;
   background: url(../assets/icon-cross.svg) no-repeat center;
+  cursor: pointer;
 }
 
 #main-container ul#todo-list li.todos.completed .todo-checks {
@@ -203,6 +207,7 @@ header#header #switcher-theme {
 
 #main-container #control-panel #todos-counter {
   margin-left: 10px;
+  cursor: default;
 }
 
 #main-container #control-panel ul#filters-list {
@@ -225,12 +230,31 @@ header#header #switcher-theme {
           box-shadow: 0 15px 50px 1px rgba(228, 229, 241, var(--opacity));
 }
 
+#main-container #control-panel ul#filters-list .filters {
+  cursor: pointer;
+}
+
 #main-container #control-panel #clear-completed {
   margin-right: 10px;
+  cursor: pointer;
 }
 
 p#reminder {
   margin-top: 110px;
   text-align: center;
+  cursor: default;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    --bg-img: url(../assets/bg-desktop-dark.jpg) top no-repeat;
+    font-size: 18px;
+  }
+  body.light-theme {
+    --bg-img: url(../assets/bg-desktop-light.jpg) top no-repeat;
+  }
+  header#header {
+    margin-top: 80px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
