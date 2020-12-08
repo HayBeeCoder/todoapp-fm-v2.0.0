@@ -2,8 +2,13 @@ const addTodoForm = document.querySelector('#add-todo');
 const addTodoInput = document.querySelector('#add-todo input');
 const todoList = document.querySelector('#todo-list');
 const todoNames = document.querySelector('.todo-names');
-const clearCompletedBtn = document.querySelector('#clear-completed')
+const clearCompletedBtn = document.querySelector('#clear-completed');
+// filters buttons
+const allBtn = document.querySelector('#all');
+const activeBtn = document.querySelector('#active');
+const completedBtn = document.querySelector('#completed');
 
+// Event linteners
 addTodoInput.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         e.preventDefault();
@@ -13,6 +18,12 @@ addTodoInput.addEventListener('keypress', function (e) {
 todoList.addEventListener('click', todoCheckClose);
 clearCompletedBtn.addEventListener('click', clearCompleted);
 
+// Event listeners for filter buttons
+allBtn.addEventListener('click', allFilter)
+activeBtn.addEventListener('click', activeFilter)
+completedBtn.addEventListener('click', completedFilter)
+
+// Functions
 
 function addTodo() {
     // create li
@@ -37,6 +48,11 @@ function addTodo() {
     addTodoInput.value = '';
 
     todosCount();
+
+    // check a filter 
+    if (todoList.classList.contains('completed')) {
+        completedFilter()
+    }
 }
 
 function todoCheckClose(event) {
@@ -47,6 +63,10 @@ function todoCheckClose(event) {
     } else if (item.classList[0] === 'todo-names') {
         const todo = item.parentElement;
         todo.classList.add('completed');
+
+        if (todoList.classList.contains('active')) {
+            activeFilter()
+        }
     }
     todosCount();
 }
@@ -62,10 +82,9 @@ function todosCount() {
     })
     counter.innerText = `${number} items left`;
 }
-todosCount();
 
 function clearCompleted() {
-    const todos = document.querySelectorAll('#todo-list .todos')
+    const todos = document.querySelectorAll('#todo-list .todos');
     todos.forEach((todo) => {
         if (todo.classList.contains('completed')) {
             todo.remove();
@@ -73,3 +92,53 @@ function clearCompleted() {
     })
     todosCount();
 }
+
+function allFilter() {
+    // set color for active link
+    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = '#cacde8')
+    document.querySelector('#all').style.color = '#3a7bfd';
+    // set class for todo list
+    todoList.classList = 'todoList all';
+    // filter
+    const todos = document.querySelectorAll('.todos');
+    todos.forEach(function (todo) {
+        todo.style.display = 'flex';
+    })
+}
+
+function activeFilter(e) {
+    // set color for active link
+    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = '#cacde8')
+    document.querySelector('#active').style.color = '#3a7bfd';
+    // set class for todo list
+    todoList.classList = 'todoList active';
+    // filter
+    const todos = document.querySelectorAll('.todos');
+    todos.forEach(function (todo) {
+        if (!todo.classList.contains('completed')) {
+            todo.style.display = 'flex';
+        } else {
+            todo.style.display = 'none';
+        }
+    })
+}
+
+function completedFilter(e) {
+    // set color for active link
+    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = '#cacde8')
+    document.querySelector('#completed').style.color = '#3a7bfd';
+    // set class for todo list
+    todoList.classList = 'todoList completed';
+    // filter
+    const todos = document.querySelectorAll('.todos');
+    todos.forEach(function (todo) {
+        if (todo.classList.contains('completed')) {
+            todo.style.display = 'flex';
+        } else {
+            todo.style.display = 'none';
+        }
+    })
+}
+
+allFilter();
+todosCount();
