@@ -28,7 +28,7 @@ completedBtn.addEventListener('click', completedFilter)
 function addTodo() {
     // create li
     const todoLi = document.createElement('li');
-    todoLi.classList.add('todos');
+    todoLi.classList.add('todos', 'handle');
     // create div.todo-checks
     const todoCheckDiv = document.createElement('div');
     todoCheckDiv.classList.add('todo-checks');
@@ -139,6 +139,15 @@ function completedFilter(e) {
         }
     })
 }
+
+// Drag and drop sortable functionality from liblary Sortable.js
+
+new Sortable(todoList, {
+    handle: '.handle',
+    animation: 200
+})
+
+// Functions which fires when page load
 
 allFilter();
 todosCount();
