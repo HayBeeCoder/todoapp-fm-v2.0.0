@@ -1,7 +1,6 @@
 const addTodoForm = document.querySelector('#add-todo');
 const addTodoInput = document.querySelector('#add-todo input');
 const todoList = document.querySelector('#todo-list');
-const todoNames = document.querySelector('.todo-names');
 const clearCompletedBtn = document.querySelector('#clear-completed');
 const themeBtn = document.querySelector('#switcher-theme')
 // filters buttons
@@ -64,7 +63,7 @@ function todoCheckClose(event) {
     if (item.classList[0] === 'todo-closes') {
         const todo = item.parentElement;
         todo.remove();
-    } else if (item.classList[0] === 'todo-names') {
+    } else if (item.classList[0] === 'todo-names' || item.classList[0] === 'todo-checks') {
         const todo = item.parentElement;
         todo.classList.add('completed');
 
