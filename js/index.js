@@ -66,6 +66,7 @@ function todoCheckClose(event) {
     } else if (item.classList[0] === 'todo-names' || item.classList[0] === 'todo-checks') {
         const todo = item.parentElement;
         todo.classList.add('completed');
+        console.log(item.classList);
 
         if (todoList.classList.contains('active')) {
             activeFilter()
@@ -78,7 +79,7 @@ function todosCount() {
     const todos = document.querySelectorAll('.todos');
     const counter = document.querySelector('#todos-counter');
     let number = 0;
-    todos.forEach((todo) => {
+    todos.forEach(todo => {
         if (!todo.classList.contains('completed')) {
             number++
         }
@@ -98,26 +99,24 @@ function clearCompleted() {
 
 function allFilter() {
     // set color for active link
-    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = 'var(--color)')
+    document.querySelectorAll('.filters').forEach(btn => btn.style.color = 'var(--color)')
     document.querySelector('#all').style.color = '#3a7bfd';
     // set class for todo list
     todoList.classList = 'todoList all';
     // filter
     const todos = document.querySelectorAll('.todos');
-    todos.forEach(function (todo) {
-        todo.style.display = 'flex';
-    })
+    todos.forEach(todo => todo.style.display = 'flex');
 }
 
 function activeFilter(e) {
     // set color for active link
-    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = 'var(--color)')
+    document.querySelectorAll('.filters').forEach(btn => btn.style.color = 'var(--color)')
     document.querySelector('#active').style.color = '#3a7bfd';
     // set class for todo list
     todoList.classList = 'todoList active';
     // filter
     const todos = document.querySelectorAll('.todos');
-    todos.forEach(function (todo) {
+    todos.forEach(todo => {
         if (!todo.classList.contains('completed')) {
             todo.style.display = 'flex';
         } else {
@@ -128,13 +127,13 @@ function activeFilter(e) {
 
 function completedFilter(e) {
     // set color for active link
-    document.querySelectorAll('.filters').forEach((btn) => btn.style.color = 'var(--color)')
+    document.querySelectorAll('.filters').forEach(btn => btn.style.color = 'var(--color)')
     document.querySelector('#completed').style.color = '#3a7bfd';
     // set class for todo list
     todoList.classList = 'todoList completed';
     // filter
     const todos = document.querySelectorAll('.todos');
-    todos.forEach(function (todo) {
+    todos.forEach(todo => {
         if (todo.classList.contains('completed')) {
             todo.style.display = 'flex';
         } else {
